@@ -1,0 +1,32 @@
+<!doctype html>
+    <html>
+    <head>
+    	<title>Contoh eCharts</title>
+    	<script src="http://echarts.baidu.com/dist/echarts.min.js"></script>
+    </head>
+    <body>
+    	<div id="chart" style="width: 500px; height: 350px;"></div>
+    	<script>
+    		var chart = document.getElementById('chart');
+    		var myChart = echarts.init(chart);
+    		var option = {
+    			title: { text: 'ECharts Sample' },
+    			tooltip: { },
+    			legend: { data: [ 'Penjualan' ] },
+    			xAxis: { data: [ "kaos", "baju", "piyama", "celana", "sepatu", "sandal" ] },
+    			yAxis: { },
+    			series: [{
+    				name: 'Penjualan',
+    				type: 'line',
+    				data: [53, 220, 316, 110, 220, 290]
+    			}],
+                dataZoom: [{
+                          type: 'inside',
+                          start: 0,
+                          end: 76
+                      }],
+    		};
+    		myChart.setOption(option);
+    	</script>
+    </body>
+    </html>
